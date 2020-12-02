@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Inscription</title>
+
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="css/tailwind.css"> -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="font-sans p-8">
+<div class="bg-white shadow-lg rounded-lg container h-auto mx-auto relative p-4 xl:p-8">
+    <div class="flex items-center px-4 xl:px-8">
+        <img src="img/head.png" class="h-8 xl:h-16" alt="">
+        <!-- <img src="img/book.png" class="h-16" alt=""> -->
+        <h1 class="text-xl xl:text-4xl uppercase text-gray-700">MyBook</h1>
+    </div>
+    <div class="w-full mt-48 px-4 xl:px-8 text-gray-500">
+        <form action="" method="POST">
+            <div class="">
+                <label for="nom" class="hidden">Nom du livre</label>
+                <input class="px-4 py-4 bg-gray-100 w-full text-sm placeholder-gray-500 border border-transparent focus:border-indigo-500"
+                        placeholder="Nom du livre" type="text" id="nom" name="nom">
+            </div>
+
+            <div class="mt-8">
+                <label for="auteur" class="hidden">Nom de l'auteur</label>
+                <input class="px-4 py-4 bg-gray-100 w-full text-sm placeholder-gray-500 border border-transparent focus:border-indigo-500"
+                        placeholder="Auteur" type="text" id="auteur" name="auteur">
+            </div>
+
+            <div class="mt-8">
+                <label for="description" class="hidden">Description du livre</label>
+                <textarea placeholder="Description du livre" name="description" id="description"
+                    class="px-4 py-4 bg-gray-100 w-full text-sm placeholder-gray-500"></textarea>
+                <span class="float-right text-gray-500 text-md capitalize">
+                    0/300 caracteres
+                </span>
+            </div>
+
+            <div class="mt-8 xl:flex flex">
+                <div class="mt-2 flex flex-col">
+                    <label id="edition" class="text-md leading-7">
+                        Edition
+                    </label>
+                    <div class="bg-gray-100 relative w-full">
+                        <select name="edition" id="edition" class="relative form-multiselect shadow-none border-none focus:border-none rounded-none focus:outline-none bg-transparent pl-4 pr-8 py-4 z-10">
+                            <option value="Edition cle">Edition cle</option>
+                            <option value="3ag edition">3ag edition</option>
+                            <option value="ugobok">ugobok</option>
+                        </select>
+                        <span class="absolute flex items-center bottom-4 right-0">
+                            <img src="img/head.png" class="h-8" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-2 ml-2 flex flex-col">
+                    <label id="annee" class="text-md leading-7">
+                        Annee
+                    </label>
+                    <div class="w-full bg-gray-100 relative">
+                        <input type="date" id="annee" name="annee"
+                        class="w-full border-none bg-transparent py-4 pr-4 pl-8 relative z-10 focus:boder-none">
+                        <span class="absolute flex items-center bottom-4 z-0">
+                            <img src="img/head.png" class="h-8" alt="">
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <label for="file2" class="w-full bg-gray-100 cursor-pointer flex items-center px-4 py-4">
+                    <span class="mr-2">
+                        <img src="img/head.png" class="h-8" alt="">
+                    </span>
+                    Upload Book
+                </label>
+                <input type="file" id="file2" class="bg-gray-200 hidden">
+            </div>
+
+            <div class="xl:absolute absolute top-0 right-0 mt-12 xl:mt-8 mr-8 xl:mr-16">
+                <label for="file1" class="flex flex-col xl:flex-col-reverse flex-col-reverse">
+                    <span class="justify-end mb-2 xl:mb-0 mb-0 xl:mt-2 mt-2">
+                        Image de couverture
+                    </span>
+                    <span class="w-36 h-36 bg-gray-100 flex justify-center items-center cursor-pointer">
+                        <img src="img/head.png" class="h-16" alt="">
+                    </span>
+                </label>
+                <input class="hidden" type="file" id="file1" name="file1">
+            </div>
+
+            <div class="mt-16 w-full flex justify-end">
+                <button class="w-36 h-12 flex items-center justify-center px-4 py-4  bg-indigo-500 hover:bg-indigo-700 text-white rounded-md uppercase" name="publish" type="submit">
+                    Publier
+                </button>
+                <button class="ml-4 w-36 h-12 flex items-center justify-center px-4 py-4 leading-none bg-indigo-300 hover:bg-indigo-400 text-white rounded-md" name="save" type="submit">
+                    Enregistrer sans publier
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
