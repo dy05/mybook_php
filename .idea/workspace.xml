@@ -2,15 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b05a6e27-6ede-480a-a8fc-b651927cfc36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Interface 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interface 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Interface 3.jpg" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/tp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book_add.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book_delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book_edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/icon-calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/icon-lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/icon-logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/icon-message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/storage/Interface 1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/storage/Interface 2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface 3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/storage/Interface 3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/form.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/img/old/head.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/img/old/home.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/img/old/human.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/img/old/plants.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/storage" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CodeWithMe" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -63,7 +92,7 @@
       <workItem from="1608023912861" duration="13432000" />
       <workItem from="1608068589969" duration="45529000" />
       <workItem from="1608284351444" duration="14371000" />
-      <workItem from="1608373765513" duration="1247000" />
+      <workItem from="1608373765513" duration="1327000" />
     </task>
     <servers />
   </component>

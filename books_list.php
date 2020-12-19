@@ -7,6 +7,12 @@ $books = getDatabase()->query('SELECT * FROM books
     left join editions ON books.id_edition_book = editions.id_edition
     ')->fetchAll();
 
+$message = null;
+if (isset($_SESSION['delete'])) {
+    $message = 'Livre supprime avec succes';
+    unset($_SESSION['delete']);
+}
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +29,9 @@ $books = getDatabase()->query('SELECT * FROM books
     <div class="flex flex-wrap xl:justify-between">
         <?php include_once "header.php"; ?>
 
-        <?php if(isset($_SESSION['delete'])): ?>
+        <?php if($message): ?>
         <div class="absolute top-2 right-2 p-3 text-md text-white bg-green-400 rounded-md leading-2" id="alertDelete">
-            Livre supprime avec succes
+            <?= $message; ?>
         </div>
         <?php endif; ?>
 
