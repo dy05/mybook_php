@@ -1,4 +1,39 @@
-<!DOCTYPE html>
+<?php
+include "functions/app.php";
+redirectForAuth();
+
+$errors = [];
+$values = [];
+if(isset($_POST) && !empty($_POST)) {
+    $datas = array_map('trim', $_POST);
+    $datas = array_map('htmlentities', $datas);
+    $datas = array_map('strip_tags', $datas);
+    $datas = array_map('stripslashes', $datas);
+    $datas = array_map('htmlspecialchars', $datas);
+
+    if (!isset($datas['email']) || !isset($datas['password'])) {
+        $errors['action'] = 'Veuillez remplir tous les champs';
+    }
+
+    if (empty($errors)) {
+        $values['email'] = $datas['email'];
+        $query = getDatabase()->prepare('SELECT * FROM users WHERE email_user = ?');
+        $query->execute([$values['email']]);
+        if($user = $query->fetch()) {
+            if (password_verify($datas['password'], $user->password_user)) {
+                $_SESSION['auth_user'] = $user;
+                header('Location: index.php');
+            }
+        }
+        $errors['action'] = 'Ces informations d\'identification ne correspondent pas à nos enregistrements';
+    }
+
+    if (empty($errors)) {
+        $errors['action'] = 'Une erreur innatendue s\'est produite';
+    }
+}
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +42,7 @@
     <title>Connexion</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="font-sans xl:px-32 pt-4 pb-8 flex">
 <div class="bg-gray-100 shadow-lg rounded-lg container flex h-auto m-auto">
@@ -30,13 +65,19 @@
 
             <div class="w-full">
                 <form action="" method="POST">
+                    <?php if (isset($errors['action'])): ?>
+                        <div class="bg-red-700 text-white rounded-md mb-8 px-4 py-2">
+                            <?= $errors['action']; ?>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="mb-4 relative shadow-lg w-full bg-white">
                         <label for="email" class="uppercase text-xs text-gray-300 absolute top-1 pl-5">Email</label>
-                        <input class="px-4 py-5 w-full text-gray-500 text-sm border-transparent border-l-4 focus:border-indigo-500" type="email" id="email">
+                        <input class="px-4 py-5 w-full text-gray-500 focus:outline-none text-sm border-transparent border-l-4 focus:border-indigo-500 <?= isset($errors['email'])? 'border-red-400' : '';?>" type="email" id="email" name="email" value="<?= $values['email'] ?? ''; ?>" required>
                     </div>
                     <div class="mb-4 relative shadow-lg w-full bg-white">
                         <label for="password" class="uppercase text-xs text-gray-300 absolute top-1 pl-5">Password</label>
-                        <input class="px-4 py-5 w-full text-gray-500 text-sm border-transparent border-l-4 focus:border-indigo-500" type="password" id="password">
+                        <input class="px-4 py-5 w-full text-gray-500 focus:outline-none text-sm border-transparent border-l-4 focus:border-indigo-500" type="password" id="password" name="password" required>
                         <a href="#" class="absolute right-8 top-0 text-gray-400 text-sm font-bold">Oublier</a>
                     </div>
 
@@ -49,9 +90,9 @@
             </div>
         </div>
         <div class="mt-16 flex float-right">
-            <a href="register.html" class="flex font-semibold uppercase text-gray-500">
+            <a href="register.php" class="flex font-semibold uppercase text-gray-500">
                 Creer compte
-                <img src="img/font-1.png" class="ml-4 w-6 h-6"/>
+                <img src="img/icon-logout.png" class="ml-4 w-6 h-6"/>
             </a>
         </div>
     </div>
