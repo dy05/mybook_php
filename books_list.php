@@ -88,6 +88,7 @@ if (isset($_SESSION['delete'])) {
                                     </span>
                                 </td>
                                 <td class="px-2 py-2 whitespace-nowraps text-right text-sm font-medium space-x-1 space-y-1 flex flex-col">
+                                    <a href="<?= getFile($book->filename); ?>" class="text-white text-center px-2 py-1 rounded-md bg-green-500 hover:bg-green-700">Telecharger</a>
                                     <a href="book_edit.php?id=<?= $book->id_book; ?>" class="text-white text-center px-2 py-1 rounded-md bg-indigo-600 hover:bg-indigo-800">Modifier</a>
                                     <a href="book_delete.php?id=<?= $book->id_book; ?>" onclick="return confirm('Voulez vous vraiment supprimer ce livre ?')" class="text-white text-center px-2 py-1 rounded-md bg-red-600 hover:bg-red-800">Supprimer</a>
                                 </td>

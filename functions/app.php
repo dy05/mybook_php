@@ -104,7 +104,7 @@ function getUsers($role = null)
 }
 
 function getFile ($filename, $withCover = true) {
-    return 'files/books/'.$filename;
+    return 'storage/books/'.$filename;
 }
 
 function deleteFile ($filename, $withCover = true) {
@@ -118,7 +118,7 @@ function deleteFile ($filename, $withCover = true) {
 
 
 function getCover ($filename, $withCover = true) {
-    return 'img/covers/'.$filename;
+    return 'storage/covers/'.$filename;
 }
 
 function deleteCover ($filename, $withCover = true) {

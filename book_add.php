@@ -158,11 +158,11 @@ if(isset($_POST) && !empty($_POST)) {
 
         if (empty($errors) && !empty($fileContent)) {
             $fileName = $auteur['nom'].' - '.$datas['nom'].' - '.$edition['nom'].' - '.$dateYear['Y'].'.'.$fileContent['ext'];
-            $fileLink = 'files/books/' . $fileName;
+            $fileLink = 'storage/books/' . $fileName;
 //            $i = 0;
 //            while (file_exists($fileLink)) {
 //                $fileName = $i++ . $file;
-//                $fileLink = 'files/books/' . $fileName;
+//                $fileLink = 'storage/books/' . $fileName;
 //            }
             if (move_uploaded_file($fileContent['file_tmp'], $fileLink)) {
                 $datas['filename'] = $fileName;
@@ -172,7 +172,7 @@ if(isset($_POST) && !empty($_POST)) {
 
             if (!empty($coverContent)) {
                 $coverName = $auteur['nom'].' - '.$datas['nom'].' - '.$edition['nom'].' - '.$dateYear['Y'].'-cover.'.$coverContent['ext'];
-                $coverLink = 'img/covers/' . $coverName;
+                $coverLink = 'storage/covers/' . $coverName;
                 if (move_uploaded_file($coverContent['file_tmp'], $coverLink)) {
                     $datas['couverture_book'] = $coverName;
                 } else {
