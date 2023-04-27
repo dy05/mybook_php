@@ -164,6 +164,7 @@ if(isset($_POST) && !empty($_POST)) {
 //                $fileName = $i++ . $file;
 //                $fileLink = 'storage/books/' . $fileName;
 //            }
+
             if (move_uploaded_file($fileContent['file_tmp'], $fileLink)) {
                 $datas['filename'] = $fileName;
             } else {
